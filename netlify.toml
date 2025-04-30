@@ -1,10 +1,23 @@
+# Netlify Konfigürasyonu
 [build]
-  functions = "functions"
-  publish = "public"
-
-[dev]
-  functions = "functions"
-  publish = "public"
+  # Burada, web sitenizin yayımlanacak dosyalarının bulunduğu dizin.
+  publish = "/Users/mevaasel/tesla-api"  # Projenin ana dizini, burada site dosyalarınız yer almalı.
+  
+  # Netlify'nin function'ları aradığı dizin.
+  functions = "netlify/functions"  # Eğer serverless functions kullanıyorsanız, doğru dizini gösterin.
+  
+  # İsteğe bağlı: Build işlemi için belirli bir komut tanımlayabilirsiniz (varsa).
+  # command = "npm run build"
 
 [functions]
-directory = "netlify/functions"
+  directory = "netlify/functions"  # Functions dosyalarınızın bulunduğu dizin.
+
+[[redirects]]
+  from = "/old-page"
+  to = "/new-page"
+  status = 301  # Bu, eski sayfadan yeni sayfaya yönlendirme yapar.
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000"

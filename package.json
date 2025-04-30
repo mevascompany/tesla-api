@@ -1,16 +1,15 @@
 {
   "name": "tesla-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Tesla API Project",
+  "main": "tesla.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo 'Build script is not defined. Please add build steps.'",
+    "start": "node tesla.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "puppeteer": "^24.7.2"
+    "puppeteer": "^19.0.0",
+    "cheerio": "^1.0.0",
+    "netlify-cli": "^3.0.0"
   }
 }
