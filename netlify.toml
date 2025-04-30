@@ -5,3 +5,6 @@
 [dev]
   functions = "functions"
   publish = "public"
+
+[functions]
+directory = "netlify/functions"
